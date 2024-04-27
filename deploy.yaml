@@ -34,3 +34,12 @@ spec:
         resources:
           requests:
             memory: 1Gi
+        volumeMounts:
+        - mountPath: /config/xdg/config/oxwu/settings.json
+          name: settings
+          subPath: settings.json
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: tweew
+        name: settings
