@@ -1,0 +1,27 @@
+{
+  "warning": {
+    "townID": 6300200,
+    "alertIntensity": 0,
+    "applySiteEffect": true,
+    "popupWindow": true,
+    "popupNotification": true,
+    "playSound": true,
+    "alwaysOnTop": true,
+    "showPWave": true,
+    "smoothWave": false,
+    "defaultSound": "0",
+    "customSound": null
+  },
+  "report": {
+    "popupWindow": false,
+    "popupNotification": true,
+    "playSound": true,
+    "showIntensity": true,
+    "customSound": null
+  },
+  "autorun": true,
+  "autoDownload": false,
+  "connectPath": "/notify.sh",
+  "connectOnce": false,
+  "scale": 1
+}

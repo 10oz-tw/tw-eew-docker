@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: tweew
+  name: tweew
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tweew
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: tweew
+    spec:
+      containers:
+      - image: 10oz/tweew
+        imagePullPolicy: Always
+        name: tweew
+        env:
+        - name: TWEEW_CMD
+          value: |
+            curl 'https://n8n.com/webhook/eew' -H 'Content-Type: application/json' -d'{"grade":'$1', "second":'$2'}'
+        securityContext:
+          allowPrivilegeEscalation: true
+          privileged: true
+          capabilities:
+            add:
+              - SYS_ADMIN
+        resources:
+          requests:
+            memory: 1Gi
